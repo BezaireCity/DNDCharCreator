@@ -6,14 +6,20 @@ class Character{
         this.equipment=equipment
         this.level=level
     }
+
+    rollDice(){
+        return Math.floor(Math.random() * 20)
+    }
+
+    attack(target, attackType){}
 }
+
 
 class Rogue extends Character{
     constructor(){
         super(name, race, stats, level)
+        equipment = ["rapier", "shortsword", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
     }
-        inventory = ["rapier", "shortsword", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
-
         sneakAttack(){
             return `Target takes ${stats} damage`
         }
@@ -22,3 +28,13 @@ class Rogue extends Character{
         }
     
 }
+
+class Fighter extends Character {
+    constructor(name, race, stats, equipment, level, fightingStyle, range){
+        super(name, race, stats, equipment, level);
+
+        this.fightingStyle = fightingStyle;
+        this.range = range;
+    }
+}
+
