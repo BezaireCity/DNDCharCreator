@@ -26,7 +26,38 @@ class Character{
         const roll =Math.floor(Math.random()*this.equipment.weapon.dice)
         return (this.equipment.weapon.damage*roll)+this.equipment.weapon.bonusDamage
     }
+
+    rollDice(){
+        return Math.floor(Math.random() * 20)
+    }
+
+    attack(target, attackType){}
 }
+
+
+class Rogue extends Character{
+    constructor(name, race, stats, level){
+        super(name, race, stats, level)
+        this.equipment = ["rapier", "shortsword", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
+    }
+        sneakAttack(){
+            return `Target takes ${stats} damage`
+        }
+        thievesCant(){
+            return `${name} sends a secret message`
+        }
+    
+}
+
+class Fighter extends Character {
+    constructor(name, race, stats, equipment, level, fightingStyle, range){
+        super(name, race, stats, equipment, level);
+
+        this.fightingStyle = fightingStyle;
+        this.range = range;
+    }
+}
+
 class Monster extends Character{
     constructor(name, race, equipment, difficultyClass){
         super(name,race, equipment)
@@ -43,3 +74,4 @@ class Goblin extends Character{
         console.log('Garbererbabbrlarg')
     }
 }
+
