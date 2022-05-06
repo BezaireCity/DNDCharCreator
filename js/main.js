@@ -14,6 +14,21 @@ class Character{
     attack(target, attackType){}
 }
 
+
+class Rogue extends Character{
+    constructor(){
+        super(name, race, stats, level)
+        equipment = ["rapier", "shortsword", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
+    }
+        sneakAttack(){
+            return `Target takes ${stats} damage`
+        }
+        thievesCant(){
+            return `${name} sends a secret message`
+        }
+    
+}
+
 class Fighter extends Character {
     constructor(name, race, stats, equipment, level, fightingStyle, range){
         super(name, race, stats, equipment, level);
@@ -21,8 +36,5 @@ class Fighter extends Character {
         this.fightingStyle = fightingStyle;
         this.range = range;
     }
-
-    attack(taget, attackType){
-        // Attack target with attack type.
-    }
 }
+
