@@ -20,6 +20,10 @@ class Character{
     }
     rollToHit(opponentAC){
         const roll=Math.floor(Math.random()*20)
-        ((roll+this._stats.STR.bonus+this.equipment.rollBonus)>opponentAC)? damageRoll(): console.log("Attack missed!")
+        ((roll+this._stats.STR.bonus+this.equipment.weapon.hitBonus)>opponentAC)? damageRoll(): console.log("Attack missed!")
+    }
+    damageRoll(){
+        const roll =Math.floor(Math.random()*this.equipment.weapon.dice)
+        return (this.equipment.weapon.damage*roll)+this.equipment.weapon.bonusDamage
     }
 }
