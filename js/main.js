@@ -36,9 +36,9 @@ class Character{
 
 
 class Rogue extends Character{
-    constructor(){
+    constructor(name, race, stats, level){
         super(name, race, stats, level)
-        equipment = ["rapier", "shortsword", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
+        this.equipment = ["rapier", "shortsword", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
     }
         sneakAttack(){
             return `Target takes ${stats} damage`
@@ -55,6 +55,23 @@ class Fighter extends Character {
 
         this.fightingStyle = fightingStyle;
         this.range = range;
+    }
+}
+
+class Monster extends Character{
+    constructor(name, race, equipment, difficultyClass){
+        super(name,race, equipment)
+        this.difficultyClass=difficultyClass
+    }
+}
+
+class Goblin extends Character{
+    constructor(name, race, equipment, difficultyClass, tribe){
+        super(name, race, equipment, difficultyClass)
+        this._race=Goblin
+    }
+    sayHello(){
+        console.log('Garbererbabbrlarg')
     }
 }
 
