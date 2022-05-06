@@ -27,3 +27,19 @@ class Character{
         return (this.equipment.weapon.damage*roll)+this.equipment.weapon.bonusDamage
     }
 }
+class Monster extends Character{
+    constructor(name, race, equipment, difficultyClass){
+        super(name,race, equipment)
+        this.difficultyClass=difficultyClass
+    }
+}
+
+class Goblin extends Character{
+    constructor(name, race, equipment, difficultyClass, tribe){
+        super(name, race, equipment, difficultyClass)
+        this._race=Goblin
+    }
+    sayHello(){
+        console.log('Garbererbabbrlarg')
+    }
+}
